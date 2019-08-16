@@ -1,5 +1,4 @@
 require './TextService.rb'
-require 'Date'
 
 task :default => :send_axioms
 
