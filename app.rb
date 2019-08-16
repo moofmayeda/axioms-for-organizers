@@ -1,8 +1,12 @@
 require './TextService.rb'
+require 'Date'
 
 task :default => :send_axioms
 
 task :send_axioms do
+  today = Date.today
+  return if today.saturday? || today.sunday?
+
   line_count = `wc -l "axioms.txt"`.strip.split(' ')[0].to_i
   axiom = rand line_count
 
