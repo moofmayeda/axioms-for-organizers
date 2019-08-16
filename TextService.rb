@@ -1,6 +1,6 @@
 # Download the twilio-ruby library from twilio.com/docs/libraries/ruby
 require 'twilio-ruby'
-require 'dotenv/load'
+require 'dotenv/load' if ENV['RAILS_ENV'] != 'production'
 
 CLIENT = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
 
