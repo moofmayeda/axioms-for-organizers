@@ -70,6 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv-rails
+  rake
   twilio-ruby
 
 BUNDLED WITH
