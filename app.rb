@@ -1,8 +1,8 @@
 require './TextService.rb'
 
-task :default => :unit_test
+task :default => :send_axioms
 
-task :unit_test do
+task :send_axioms do
   line_count = `wc -l "axioms.txt"`.strip.split(' ')[0].to_i
   axiom = rand line_count
 
