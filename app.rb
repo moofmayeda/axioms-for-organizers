@@ -1,15 +1,17 @@
 require './TextService.rb'
 
-task :default => :send_axioms
+task :default do
+  send_axioms
+end
 
-task :send_axioms do
+def send_axioms
   today = Date.today
+
+  # only send on weekdays
   return if today.saturday? || today.sunday?
 
-  line_count = `wc -l "axioms.txt"`.strip.split(' ')[0].to_i
-  axiom = rand line_count
+  # only send 33% of the time
+  return unless rand(3) == 0
 
-  File.foreach('axioms.txt').with_index do |line, line_num|
-    TextService.send(line) if line_num == axiom
-  end
+  TextService.send(File.readlines('axioms.txt').sample)
 end
