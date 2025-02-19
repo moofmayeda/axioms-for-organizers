@@ -60,7 +60,7 @@ GEM
     minitest (5.25.4)
     multipart-post (2.1.1)
     mutex_m (0.3.0)
-    nokogiri (1.17.1)
+    nokogiri (1.18.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     psych (5.1.2)
